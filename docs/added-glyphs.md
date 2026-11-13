@@ -1,8 +1,8 @@
 # Added glyphs
 
-370 codepoints have drawable outlines in the 1.4 candidate that did not in the original.
+370 codepoints have drawable outlines in the 1.4 that did not in the original.
 Of these, 256 were already mapped to blank glyphs; 114 had no original mapping.
-The candidate maps 465 codepoints overall. The comparison counts encoded characters, not unique glyph IDs.
+The release maps 465 codepoints overall. The comparison counts encoded characters, not unique glyph IDs.
 Whitespace and format controls without drawable outlines are excluded. Redrawn existing symbols are tracked separately.
 
 | Codepoint | Unicode name | Original |

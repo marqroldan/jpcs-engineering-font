@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGINAL = ROOT / "source/jpcs_engring_font.ttf"
-CANDIDATE = ROOT / "fonts/JPCS_Engineering_Font_1_4_Candidate.ttf"
+RELEASE = ROOT / "fonts/JPCS_Engineering_Font_1_4.ttf"
 
 
 def coverage(path):
@@ -26,7 +26,7 @@ def coverage(path):
 
 def main():
     old_mapped, old_visible = coverage(ORIGINAL)
-    new_mapped, new_visible = coverage(CANDIDATE)
+    new_mapped, new_visible = coverage(RELEASE)
     added = new_visible - old_visible
     placeholder = added & old_mapped
     rows = [
@@ -42,12 +42,12 @@ def main():
     label = ImageFont.load_default(size=25)
     small = ImageFont.load_default(size=22)
     heading = ImageFont.load_default(size=54)
-    glyph = ImageFont.truetype(str(CANDIDATE), 49, layout_engine=ImageFont.Layout.RAQM)
-    sample = ImageFont.truetype(str(CANDIDATE), 40, layout_engine=ImageFont.Layout.RAQM)
+    glyph = ImageFont.truetype(str(RELEASE), 49, layout_engine=ImageFont.Layout.RAQM)
+    sample = ImageFont.truetype(str(RELEASE), 40, layout_engine=ImageFont.Layout.RAQM)
     d.rectangle((0, 0, 1359, 8), fill=teal)
     d.text((48, 39), "JPCS ENGINEERING FONT", font=label, fill=teal)
     d.text((45, 73), "Added glyphs", font=heading, fill=ink)
-    d.text((48, 151), f"{len(added)} newly visible characters vs. the original  |  Selected examples from 1.4 candidate", font=small, fill=muted)
+    d.text((48, 151), f"{len(added)} newly visible characters vs. the original  |  Selected examples from 1.4", font=small, fill=muted)
     for i, (title, chars) in enumerate(rows):
         top = 210 + i * 121
         d.line((48, top, 1311, top), fill="#c8d7d1", width=2)
@@ -63,9 +63,9 @@ def main():
     image.save(ROOT / "docs/added-glyphs.png")
     lines = [
         "# Added glyphs", "",
-        f"{len(added)} codepoints have drawable outlines in the 1.4 candidate that did not in the original.",
+        f"{len(added)} codepoints have drawable outlines in the 1.4 that did not in the original.",
         f"Of these, {len(placeholder)} were already mapped to blank glyphs; {len(added - placeholder)} had no original mapping.",
-        f"The candidate maps {len(new_mapped)} codepoints overall. The comparison counts encoded characters, not unique glyph IDs.",
+        f"The release maps {len(new_mapped)} codepoints overall. The comparison counts encoded characters, not unique glyph IDs.",
         "Whitespace and format controls without drawable outlines are excluded. Redrawn existing symbols are tracked separately.", "",
         "| Codepoint | Unicode name | Original |", "| --- | --- | --- |",
     ]
