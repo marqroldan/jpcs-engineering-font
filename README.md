@@ -2,6 +2,12 @@
 
 A handwritten engineering lettering font extended with Greek letters, accented Latin, mathematical and electrical symbols, drafting marks, and superscripts and subscripts. The original font is credited to **Junior Philippine Computer Society – Mapua Chapter**.
 
+## Font preview
+
+![JPCS Engineering Font 1.4 specimen: Engineering in motion. The quick brown fox jumps over the lazy dog. A1 B2 C4 E6 X9 R2D4. Part AX-204B, Rev. C4, diameter 12.50 mm. Uppercase and lowercase A to Z, digits 0 to 9, and sample equations.](docs/type-specimen.png)
+
+## Added glyphs
+
 ![Selected added glyphs: Greek, math and electrical symbols, drafting marks and arrows, superscripts and subscripts, accents and punctuation. Examples: Lorem ipsum, V = I × R, and x² + y² = r².](docs/added-glyphs.png)
 
 Version 1.4 maps **465 Unicode characters**. Compared with the original, **370 gained drawable outlines**: 256 were mapped to blank glyphs and 114 were unmapped. See the [complete list of additions](docs/added-glyphs.md). The count excludes whitespace and format controls without outlines and does not count redrawn existing symbols such as `<`, `>`, and `|` as additions.
@@ -32,9 +38,10 @@ python scripts/build_candidate_1_3.py
 python scripts/build_candidate_1_4.py
 python scripts/build_release_1_4.py
 python scripts/render_glyphs.py
+python scripts/render_type_specimen.py
 ```
 
-The five build scripts write to `build/`, leaving the archived files unchanged. The candidate builders each use their archived predecessor. The stable packaging script uses the archived 1.4 candidate and updates its name records. The renderer updates the README specimen and full Unicode list. The draft, Improved, 1.3 and 1.4 candidate builds matched the archived fonts after normalizing the modification timestamp with the pinned tooling. No exact generator snapshot is available for the intermediate 1.2 build or for the original font.
+The five build scripts write to `build/`, leaving the archived files unchanged. The candidate builders each use their archived predecessor. The stable packaging script uses the archived 1.4 candidate and updates its name records. The renderers update the README images and the full Unicode list. The draft, Improved, 1.3 and 1.4 candidate builds matched the archived fonts after normalizing the modification timestamp with the pinned tooling. No exact generator snapshot is available for the intermediate 1.2 build or for the original font.
 
 The [scripts folder](scripts/) also contains Pillow comparison renderers, font inspection scripts and independent macOS CoreText renderers. Run them from the repository root. The 1.4 metrics script requires `hb-shape` on your PATH. Proofs and metrics are written to `build/`. See [revision notes](docs/revisions.md) and [font checksums](docs/SHA256SUMS).
 
