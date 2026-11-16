@@ -4,13 +4,13 @@ A handwritten engineering lettering font extended with Greek letters, accented L
 
 ## Font preview
 
-![JPCS Engineering Font 1.4 specimen: Engineering in motion. The quick brown fox jumps over the lazy dog. A1 B2 C4 E6 X9 R2D4. Part AX-204B, Rev. C4, diameter 12.50 mm. Uppercase and lowercase A to Z, digits 0 to 9, and sample equations.](docs/type-specimen.png)
+![JPCS Engineering Font 1.4.1 specimen: Engineering in motion. The quick brown fox jumps over the lazy dog. A1 B2 C4 E6 X9 R2D4. Part AX-204B, Rev. C4, diameter 12.50 mm. Uppercase and lowercase A to Z, digits 0 to 9, sample equations, and a comma and period row with “Length, width, height.” and “1,250.75 mm.”](docs/type-specimen.png)
 
 ## Added glyphs
 
 ![Selected added glyphs: Greek, math and electrical symbols, drafting marks and arrows, superscripts and subscripts, accents and punctuation. Examples: Lorem ipsum, V = I × R, and x² + y² = r².](docs/added-glyphs.png)
 
-Version 1.4 maps **465 Unicode characters**. Compared with the original, **370 gained drawable outlines**: 256 were mapped to blank glyphs and 114 were unmapped. See the [complete list of additions](docs/added-glyphs.md). The count excludes whitespace and format controls without outlines and does not count redrawn existing symbols such as `<`, `>`, and `|` as additions.
+Version 1.4.1 maps **465 Unicode characters**. Compared with the original, **370 gained drawable outlines**: 256 were mapped to blank glyphs and 114 were unmapped. See the [complete list of additions](docs/added-glyphs.md). The count excludes whitespace and format controls without outlines and does not count redrawn existing symbols such as `<`, `>`, and `|` as additions.
 
 ## Download
 

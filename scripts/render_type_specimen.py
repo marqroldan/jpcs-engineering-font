@@ -1,4 +1,4 @@
-"""Render the README typography specimen from the stable 1.4 TTF."""
+"""Render the README typography specimen from the stable 1.4.1 TTF."""
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -16,19 +16,23 @@ def main():
             (46, "abcdefghijklmnopqrstuvwxyz  0123456789"),
         ]),
         ("05 / ENGINEERING NOTATION", [(51, "V = I × R     x² + y² = r²     θ = 45° ± 0.5°")]),
+        ("06 / COMMA AND PERIOD", [
+            (52, "Length, width, height."),
+            (50, "Rev. B.    1,250.75 mm    0.5, 1.0, 2.5"),
+        ]),
     ]
     _, visible = coverage(RELEASE)
     assert {ord(ch) for _, lines in samples for _, line in lines for ch in line if ch != " "} <= visible
-    width, height, inset = 1360, 912, 52
+    width, height, inset = 1360, 1070, 52
     image = Image.new("RGB", (width, height), "#fffefa")
     draw = ImageDraw.Draw(image)
     ink, teal, rule = "#16282b", "#17665b", "#c8d7d1"
     label = ImageFont.load_default(size=24)
     draw.rectangle((0, 0, width - 1, 8), fill=teal)
-    draw.text((inset, 36), "JPCS ENGINEERING FONT  /  VERSION 1.4", font=label, fill=teal)
+    draw.text((inset, 36), "JPCS ENGINEERING FONT  /  VERSION 1.4.1", font=label, fill=teal)
 
     for (title, lines), top, bottom in zip(
-        samples, (89, 251, 382, 551, 720), (251, 382, 551, 720, 867), strict=True
+        samples, (89, 251, 382, 551, 720, 850), (251, 382, 551, 720, 850, 1030), strict=True
     ):
         draw.line((inset, top, width - inset, top), fill=rule, width=2)
         draw.text((inset, top + 14), title, font=label, fill=teal)
