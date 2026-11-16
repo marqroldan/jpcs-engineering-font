@@ -16,7 +16,8 @@ Version 1.4 maps **465 Unicode characters**. Compared with the original, **370 g
 
 | Build | File | What changed |
 | --- | --- | --- |
-| **1.4 (latest)** | [TTF](fonts/JPCS_Engineering_Font_1_4.ttf) | Opened the spacing in C4, C6, C8, E4, E6 and E8. Same outlines, character map and individual glyph widths as 1.3. |
+| **1.4.1 (latest)** | [TTF](fonts/JPCS_Engineering_Font_1_4_1.ttf) | Redrew the comma with a longer, tapered down-left stroke. |
+| 1.4 | [TTF](fonts/JPCS_Engineering_Font_1_4.ttf) | Opened the spacing in C4, C6, C8, E4, E6 and E8. Same outlines, character map and individual glyph widths as 1.3. |
 | 1.4 candidate | [TTF](fonts/JPCS_Engineering_Font_1_4_Candidate.ttf) | Archived prerelease with the same glyphs and spacing as 1.4. |
 | 1.3 candidate | [TTF](fonts/JPCS_Engineering_Font_1_3_Candidate.ttf) | Reworked punctuation, decimal spacing, and selected uppercase and numeral pairs. |
 | 1.2 Improved | [TTF](fonts/JPCS_Engineering_Font_Improved.ttf) | Expanded coverage, refined strokes and slant, added optical kerning and combining mark positioning. |
@@ -24,7 +25,7 @@ Version 1.4 maps **465 Unicode characters**. Compared with the original, **370 g
 | 1.1 draft | [TTF](fonts/JPCS_Engineering_Extended_Draft.ttf) | First extension with engineering symbols, accents and corrected symbols. |
 | Original 1.0 | [TTF](source/jpcs_engring_font.ttf) | Original supplied binary. |
 
-For the current stable build, [download **1.4**](https://github.com/marqroldan/jpcs-engineering-font/releases/tag/v1.4.0). Its family name is **JPCS Engineering Font 1.4**. On macOS, open the TTF in Font Book to install it. Spacing and fallback may vary by application; the font is not certified against ISO or ASME standards.
+For the current stable build, [download **1.4.1**](https://github.com/marqroldan/jpcs-engineering-font/releases/tag/v1.4.1). Its family name is **JPCS Engineering Font 1.4.1**. On macOS, open the TTF in Font Book to install it. Spacing and fallback may vary by application; the font is not certified against ISO or ASME standards.
 
 ## Build and verify
 
@@ -37,11 +38,12 @@ python scripts/build_font_v2.py
 python scripts/build_candidate_1_3.py
 python scripts/build_candidate_1_4.py
 python scripts/build_release_1_4.py
+python scripts/build_release_1_4_1.py
 python scripts/render_glyphs.py
 python scripts/render_type_specimen.py
 ```
 
-The five build scripts write to `build/`, leaving the archived files unchanged. The candidate builders each use their archived predecessor. The stable packaging script uses the archived 1.4 candidate and updates its name records. The renderers update the README images and the full Unicode list. The draft, Improved, 1.3 and 1.4 candidate builds matched the archived fonts after normalizing the modification timestamp with the pinned tooling. No exact generator snapshot is available for the intermediate 1.2 build or for the original font.
+The six build scripts write to `build/`, leaving the archived files unchanged. The candidate builders each use their archived predecessor. The stable packaging script uses the archived 1.4 candidate and updates its name records. The renderers update the README images and the full Unicode list. The draft, Improved, 1.3 and 1.4 candidate builds matched the archived fonts after normalizing the modification timestamp with the pinned tooling. No exact generator snapshot is available for the intermediate 1.2 build or for the original font.
 
 The [scripts folder](scripts/) also contains Pillow comparison renderers, font inspection scripts and independent macOS CoreText renderers. Run them from the repository root. The 1.4 metrics script requires `hb-shape` on your PATH. Proofs and metrics are written to `build/`. See [revision notes](docs/revisions.md) and [font checksums](docs/SHA256SUMS).
 
